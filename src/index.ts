@@ -1,7 +1,7 @@
 import { builtinModules } from 'module'
 import { Plugin } from 'rollup'
 
-const DENO_STD_PATH = `https://deno.land/std@0.90.0`
+const DENO_STD_PATH = `https://deno.land/std@0.123.0`
 
 const getPolyfillPath = (name: string) => `${DENO_STD_PATH}/node/${name}.ts`
 

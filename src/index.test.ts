@@ -30,14 +30,14 @@ test('node to deno', async () => {
   export const dir = path.join(__dirname, 'foo')`)
 
   expect(output).toMatchInlineSnapshot(`
-    "import * as _deno_path from 'https://deno.land/std@0.90.0/path/mod.ts';
-    import processModule from \\"https://deno.land/std@0.90.0/node/process.ts\\";
+    "import * as _deno_path from 'https://deno.land/std@0.123.0/path/mod.ts';
+    import processModule from \\"https://deno.land/std@0.123.0/node/process.ts\\";
       !globalThis.process && Object.defineProperty(globalThis, \\"process\\", {
         value: processModule,
         enumerable: false,
         writable: true,
         configurable: true,
-      });import path from 'https://deno.land/std@0.90.0/node/path.ts';
+      });import path from 'https://deno.land/std@0.123.0/node/path.ts';
 
     const args = process.argv.slice(2);
       const dir = path.join(_deno_path.dirname(_deno_path.fromFileUrl(import.meta.url)), 'foo');
@@ -50,7 +50,7 @@ test('node to deno', async () => {
 test('timer', async () => {
   const output = await build(`setImmediate(() => {})`)
   expect(output).toMatchInlineSnapshot(`
-    "import _node_timers from \\"https://deno.land/std@0.90.0/node/timers.ts\\";
+    "import _node_timers from \\"https://deno.land/std@0.123.0/node/timers.ts\\";
       !globalThis.setImmediate && Object.defineProperty(globalThis, \\"setImmediate\\", {
         value: _node_timers.setImmediate,
         enumerable: true,
